@@ -15,6 +15,6 @@ def softmax(*input_vector):
 	return 'Softmax results'
 
 
-print(softmax(.04,.29,1,.44))
+print(softmax(1,.2,3,4))
 
 
