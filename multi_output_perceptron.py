@@ -3,11 +3,7 @@ from collections import Counter
 
 # 4 inputs
 input_vector =[.23,.65,.85,.93]
-matmul0 = []
-matmul1 = []
-matmul2 = []
-matmul3 = []
-matmul4 = []
+matmul0,matmul1,matmul2,matmul3,matmul4 = ([] for i in range(5))
 output_vals=[]
 output_sum=[]
 count=0
