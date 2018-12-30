@@ -1,34 +1,42 @@
+import random
+import time
+iterations=0
 
-x=[.4,.5,.6]
+def mop(x1,x2,x3,w1,w2):
+	global iterations
+	x=[x1,x2,x3]
+	w=[w1,w2]
 
-w=[.5,.3]
+	x1_w1=x[0]*w[0]
+	x1_w2=x[0]*w[1]
 
-x1_w1=x[0]*w[0]
-x1_w2=x[0]*w[1]
+	x2_w1=x[1]*w[0]
+	x2_w2=x[1]*w[1]
 
-x2_w1=x[1]*w[0]
-x2_w2=x[1]*w[1]
+	x3_w1=x[2]*w[0]
+	x3_w2=x[2]*w[1]
 
-x3_w1=x[2]*w[0]
-x3_w2=x[2]*w[1]
+	output_1=[]
+	output_2=[]
 
-output_1=[]
-output_2=[]
+	output_1.extend((x1_w1, x2_w1, x3_w1))
+	output_2.extend((x1_w2, x2_w2, x3_w2))
 
-output_1.extend((x1_w1, x2_w1, x3_w1))
-output_2.extend((x1_w2, x2_w2, x3_w2))
+	sum_out1=sum(output_1)
+	sum_out2=sum(output_2)
 
-sum_out1=sum(output_1)
-sum_out2=sum(output_2)
+	print('Right Leg:',round(sum_out1,2))
+	print('Left Leg:',round(sum_out2,2))
+	print('')
 
-print('Right Leg:',round(sum_out1,2))
-print('Left Leg:',round(sum_out2,2))
+	while iterations < 10:
+		iterations+=1
+		time.sleep(.5)
+		mop(random.uniform(0,1),random.uniform(0,1),random.uniform(0,1),random.uniform(0,1),random.uniform(0,1))
 
 
-
-
-
-
+mop(random.uniform(0.0,1.0),random.uniform(0.0,1.0),random.uniform(0.0,1.0),random.uniform(0.0,1.0),random.uniform(0.0,1.0))
+print('Multi-Output Perceptron ;)')
 
 
 
